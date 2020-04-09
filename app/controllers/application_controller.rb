@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::Base
 
-    def home 
-    end 
 
     def authentication_required 
         if !logged_in 
