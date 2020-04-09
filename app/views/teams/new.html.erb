@@ -1,0 +1,12 @@
+<%= form_for(@team) do |f| %> 
+    <%= f.label :town %>
+    <%= f.text_field :town %> <br> 
+    <%= f.label :coach %> 
+    <%= f.text_field :coach %> <br> 
+    <%= f.label :color %> 
+    <%= f.text_field :color %> 
+    <%= f.label :age_group %> 
+    <%= f.number_field :age_group %> 
+
+    <%= f.submit %> 
+<% end %> 
