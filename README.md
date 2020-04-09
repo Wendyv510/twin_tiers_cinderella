@@ -1,6 +1,6 @@
 # README Twin Tiers Cinderella 
 
-This is for coaches to sign up teams and members. 
+This is for coaches to register teams and players. 
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
