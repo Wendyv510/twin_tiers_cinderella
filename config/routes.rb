@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   root '/home' 
 
+  get '/auth/facebook/callback' => 'sessions#create' 
+
 end
