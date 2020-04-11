@@ -1,0 +1,12 @@
+<h1> New Player </h1>
+
+<%= form_for(@player) do |f| %> 
+  <%= f.hidden_field :team_id %>
+
+    <%= f.label :name %> 
+    <%= f.text_area :name %> <br>
+    <%= f.label :age %> 
+    <%= f.number_field :age %> <br>
+
+    <%= f.submit %> 
+<% end %> 

@@ -6,6 +6,8 @@ class TeamsController < ApplicationController
 
     def new 
         @team = Team.new 
+           12_times do 
+        @team.player.build 
     end 
 
     def create 

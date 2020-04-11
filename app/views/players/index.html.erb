@@ -1,0 +1,7 @@
+<h1> All Players Registered </h1> 
+
+<% @players.each do |player| %> 
+    <%= link_to player.name, players_path(player) %> <br> 
+    <%= player.age %> <br> 
+<% end %> 
+

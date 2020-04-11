@@ -1,6 +1,8 @@
 <h1> Register New Team </h1> 
 
 <%= form_for(@team) do |f| %> 
+   <%= f.hidden_field :user_id %> 
+
     <%= f.label :town %>
     <%= f.text_field :town %> <br> 
     <%= f.label :coach %> 

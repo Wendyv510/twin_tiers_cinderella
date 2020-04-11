@@ -9,7 +9,9 @@ class UsersController < ApplicationController
     end 
 
     def new 
-        @user = User.new 
+        @user = User.new
+        @user.team.build 
+        @user.team.build  
     end 
 
     def create 
