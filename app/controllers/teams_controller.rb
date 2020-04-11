@@ -10,7 +10,7 @@ class TeamsController < ApplicationController
 
     def create 
         @team = Team.create(team_params)
-           redirect_to team_path(@team)  
+           redirect_to teams_path(@team)  
     end 
 
     def show 
@@ -23,7 +23,7 @@ class TeamsController < ApplicationController
 
     def update 
         @team = Team.find(params[:id]) 
-        @team.update(name: params[:town], color: params[:color], age_group params[:age_group]) 
+        @team.update(town: params[:town], coach: params[:coach], color: params[:color], age_group: params[:age_group]) 
            redirect_to team_path(@team) 
     end 
 
