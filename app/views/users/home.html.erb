@@ -2,7 +2,7 @@
   <a href="users/new">Create Account</a>
   <a href="users/login">Login</a>
   <div class="fb-login-button" data-width="" data-size="small" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
-</div>
+
 
 <%= link_to "Login via Facebook", "/auth/facebook" %> 
 
@@ -17,6 +17,16 @@ function checkLoginState() {
   });
 }
 
+{
+    status: 'connected',
+    authResponse: {
+        accessToken: '...',
+        expiresIn:'...',
+        signedRequest:'...',
+        userID:'...'
+    }
+}
+</div>
 
 <h1> Welcome To Twin Tiers Cinderella Softball League </h1> <br><br>
 
