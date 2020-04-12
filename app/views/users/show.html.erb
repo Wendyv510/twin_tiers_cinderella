@@ -2,11 +2,19 @@
 
 <%= button_to "View All Teams", teams_path %> <br> 
 
-<%#= button_to "View my Teams", user_teams_path %> <br> 
+<%= button_to "View my Teams", user_teams_path(@user) %> <br> 
 
-<%= button_to "Register New Team", new_team_path %> <br> 
+<%= button_to "Register New Team", new_user_team_path(@user) %> <br> 
 
-<%= button_to "Register New Players", new_player_path %> <br> 
+<%= button_to "Register New Players", new_team_player_path(@user.team) %> <br> 
+
+<h4> Your Teams </h4> <br>
+ <% @user.teams.each do |team| %> 
+    <%= team.town %> 
+    <%= team.color %> 
+    <%= team.age_group %> 
+<% end %> 
+
 
 <%= button_to "Logout", logout_path %> 
 

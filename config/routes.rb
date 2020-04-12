@@ -10,10 +10,16 @@ Rails.application.routes.draw do
 
   resources 'users'
   resources 'teams'
+  resources 'players'
 
   post 'teams/new' => "teams#new" 
 
-  
-  resources 'players' 
+  resources :users, only: [:show, :index] do 
+    resources :teams, only: [:show, :index, :new] 
+  end 
+
+  resources :teams, only: [:show, :index] do 
+    resources :players, only: [:show, :index, :new] 
+  end 
 
 end

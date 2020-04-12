@@ -5,10 +5,7 @@ class TeamsController < ApplicationController
     end 
 
     def new 
-        @team = Team.new 
-           12.times do 
-        @team.players.build
-           end  
+        @team = Team.new(user_id: params[:user_id])   
     end 
 
     def create 
