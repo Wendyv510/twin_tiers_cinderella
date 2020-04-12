@@ -3,5 +3,16 @@ class User < ApplicationRecord
 
     has_many :teams 
     has_many :players, through: :teams 
+
+    validates :name, :presence => true 
+    validates :email, :uniqueness => true 
+
+    def self.find_or_create_by_omniauth(auth) 
+        oauth_email = auth["info"]["email"] || auth["info"]["name"]
+        self.where(:email => oauth_email).first_or_create do |user| 
+            user.password = SecureRandom.hex 
+        end 
+    end 
+    
     
 end
