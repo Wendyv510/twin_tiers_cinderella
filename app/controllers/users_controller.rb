@@ -10,8 +10,8 @@ class UsersController < ApplicationController
 
     def new 
         @user = User.new
-        @user.team.build 
-        @user.team.build  
+        @user.teams.build 
+        @user.teams.build  
     end 
 
     def create 
