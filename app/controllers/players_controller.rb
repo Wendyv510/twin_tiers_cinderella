@@ -5,7 +5,7 @@ class PlayersController < ApplicationController
     end 
 
     def new 
-        @player = Player.new 
+        @player = Player.new(team_id: params[:team_id]) 
     end 
 
     def create 

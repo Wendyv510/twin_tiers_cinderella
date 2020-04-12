@@ -11,7 +11,7 @@
 <h4> Your Teams </h4> <br>
  <% @user.teams.each do |team| %> 
     <%= team.town %> 
-    <%= team.color %> 
+    <%= link_to team.color, teams_path(@team) %> 
     <%= team.age_group %> 
 <% end %> 
 
