@@ -6,12 +6,14 @@ class TeamsController < ApplicationController
 
     def new 
         @team = Team.new 
-           12_times do 
-        @team.player.build 
+           12.times do 
+        @team.players.build
+           end  
     end 
 
     def create 
         @team = Team.create(team_params)
+        @team.save 
            redirect_to teams_path(@team)  
     end 
 
@@ -39,6 +41,6 @@ class TeamsController < ApplicationController
        private 
 
     def team_params 
-        params.require(:teams).permit(:town, :coach, :color, :age_group, :user_id) 
+        params.require(:team).permit(:town, :coach, :color, :age_group, :user_id) 
     end 
 end

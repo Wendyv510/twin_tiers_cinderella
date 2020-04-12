@@ -10,7 +10,8 @@ class PlayersController < ApplicationController
 
     def create 
         @player = Player.create(player_params)
-          redirect_to player_path(@player)  
+        @player.save 
+          redirect_to players_path(@player)  
     end 
 
     def show 
@@ -24,7 +25,7 @@ class PlayersController < ApplicationController
     def update 
         @player = Player.find(params[:id]) 
         @player.update(name: params[:name], age: params[:age], coach_id: params[:coach_id], team_id: params[:team_id]) 
-           redirect_to player_path(@player) 
+           redirect_to players_path(@player) 
     end 
 
       private 
