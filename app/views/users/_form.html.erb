@@ -1,10 +1,9 @@
-<%= form_for(@user) do |f| %> 
-    <%= f.label :name %> 
-    <%= f.text_field :name %> <br>
-    <%= f.label :email %> 
-    <%= f.text_field :email %> <br>  
-    <%= f.label :password %> 
-    <%= f.password_field :password_digest %><br><br> 
-    <%= f.hidden_field :authenticity_token, form_authenticity_token %> 
-    <%= f.submit %> 
-<% end %> 
+ 
+    <label> Name: </label> 
+    <%= text_field_tag :name %> <br>
+    <label> Email: </label> 
+    <%= text_field_tag :email %> <br>  
+    <label> :password </label> 
+    <%= password_field_tag :password_digest %><br><br> 
+    
+    
