@@ -18,7 +18,7 @@ include Faker
 end 
 
 10.times do 
-     User.teams.create(
+     Team.create(
         town: Faker::Town.town, 
         coach: User.name, 
         color: Faker::Color.color, 
@@ -28,7 +28,7 @@ end
 end 
 
 30.times do 
-     Team.players.create(
+     Player.create(
         name: Faker::Name.name, 
         age: Faker::Number.number,
         user_id: rand(1..5),
