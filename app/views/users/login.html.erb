@@ -1,9 +1,9 @@
 <h1> Login </h1> 
 
-<%= form_for(@user) do |f| %>
+<%= form_tag '/login' do %>
 
 <%= render 'users/form' %> 
 
 
-<%= f.submit "Login" %> 
+<%= submit_tag  "Login" %> 
 <% end %> 
