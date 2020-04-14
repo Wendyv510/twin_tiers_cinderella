@@ -12,12 +12,14 @@ class SessionsController < ApplicationController
         if auth = request.env["omniauth.auth"]
            @user = User.find_or_create_by_omniauth(auth) 
            session[:user_id] = @user.id 
-           render 'users/show'  
+             redirect_to users_path(@user)   
         else
-           @user = User.find_by(name:params[:name])
-              if @user && @user.authenticate(params[:password])  
+           @user = User.find_by(name:params[:user][:name])
+              if @user && @user.authenticate(params[:user][:password])  
               session[:user_id] = @user.id 
-            render 'users/show'  
+                redirect_to users_path(@user) 
+              else 
+                redirect_to 'login'   
         end 
         end 
     end 

@@ -1,0 +1,12 @@
+<h1> Login </h1> 
+
+<%= form_for(@user), url: '/login' do |f| %>
+
+
+   <%= f.labe :email %>  
+   <%= f.email_field :email %> <br>  
+   <%= f.label :password %>  
+   <%= f.password_field :password %><br><br> 
+
+<%= submit_tag  "Login" %> 
+<% end %> 
