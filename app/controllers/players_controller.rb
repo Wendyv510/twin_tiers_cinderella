@@ -1,7 +1,11 @@
 class PlayersController < ApplicationController
 
     def index 
-        @players = Player.all 
+        if params[:team_id] && @team = Team.find_by(params[:team_id]) 
+            @players = @team.players
+        else   
+            @players = Player.all 
+        end  
     end 
 
     def new 
@@ -9,6 +13,7 @@ class PlayersController < ApplicationController
             @player = @team.players.build
         else   
             @player = Player.new 
+        end 
     end 
 
     def create 
