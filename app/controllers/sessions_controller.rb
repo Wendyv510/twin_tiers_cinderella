@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
 
+    def home 
+    end 
+
     def new 
         @user = User.new
         render 'users/login'    
