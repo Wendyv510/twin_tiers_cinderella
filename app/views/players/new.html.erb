@@ -8,5 +8,8 @@
     <%= f.label :age %> 
     <%= f.number_field :age %> <br>
 
+    <%= f.label :team_id, "Select a Team" %> 
+    <%= f.collection_select :team_id, Team.all, :id, :color, :age_group, prompt true %><br> 
+
     <%= f.submit %> 
 <% end %> 

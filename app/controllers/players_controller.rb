@@ -9,9 +9,12 @@ class PlayersController < ApplicationController
     end 
 
     def create 
-        @player = Player.create(player_params)
-        @player.save 
-          redirect_to players_path(@player)  
+        @player = current_user.player.build(player_params)
+         if @player.save 
+          redirect_to players_path(@player) 
+         else 
+            render :new 
+         end  
     end 
 
     def show 
