@@ -1,8 +1,14 @@
 <h1> Create Account </h1> 
 
-<%= form_tag(@user) do %>
+<%= form_for(@user) do |f| %>
 
-<%= render 'users/form' %> 
+   <%=f.label :name %>  
+   <%= ftext_field :name %> <br>
+   <%= f.labe :email %>  
+   <%= f.email_field :email %> <br>  
+   <%= f.label :password %>  
+   <%= f.password_field :password %><br><br> 
+    
 
-   <%= submit_tag "Create Account" %> 
+   <%= f.submit "Create Account" %> 
 <% end %> 
