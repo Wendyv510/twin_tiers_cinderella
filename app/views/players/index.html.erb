@@ -1,7 +1,9 @@
 <h1> All Players Registered </h1> 
 
 <% @players.each do |player| %> 
-    <%= link_to player.name, players_path(player) %> <br> 
-    <%= player.age %> <br> 
+    Name: <%= link_to player.name, players_path(player) %> <br> 
+    Age : <%= player.age %> <br> 
+    Coach: <%= player.user.name %> <br>
+    Team:  <%= player.team.color %>, <%= player.team.age_group %> <br>
 <% end %> 
 

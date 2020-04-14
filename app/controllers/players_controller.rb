@@ -5,7 +5,10 @@ class PlayersController < ApplicationController
     end 
 
     def new 
-        @player = Player.new(team_id: params[:team_id]) 
+        if params[:team_id] && @team = Team.find_by(params[:team_id]) 
+            @player = @team.players.build
+        else   
+            @player = Player.new 
     end 
 
     def create 
@@ -34,6 +37,6 @@ class PlayersController < ApplicationController
       private 
 
     def player_params 
-        params.require(:player).permit(:name, :age, :coach_id, :team_id)
+        params.require(:player).permit(:name, :age, :team_id)
     end 
 end
