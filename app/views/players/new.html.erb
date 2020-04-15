@@ -3,7 +3,7 @@
 <%= form_for(@player) do |f| %> 
   <%= f.hidden_field :team_id %>
 
-  <%= render partial: 'layouts/errors', locals: {object.@player} %>
+  <%= render partial: 'layouts/errors', locals: {object:@player} %>
 
     <%= f.label :name %> 
     <%= f.text_area :name %> <br>
@@ -11,7 +11,7 @@
     <%= f.number_field :age %> <br>
 
     <%= f.label :team_id, "Select a Team" %> 
-    <%= f.collection_select :team_id, Team.all, :id, :color, :age_group, prompt true %><br> 
+    <%= f.collection_select :team_id, Team.all, :town, :coach %><br> 
 
     <%= f.submit %> 
 <% end %> 

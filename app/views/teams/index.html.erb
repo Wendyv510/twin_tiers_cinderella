@@ -1,7 +1,9 @@
+<h1> All Teams </h1> 
+
 <% @teams.each do |team| %> 
-    <%= team.town %> 
-    <%= team.coach %> 
-    <%= team.color %> 
-    <%= link_to team.age_group, teams_path(team) %> 
+    Town: <%= team.town %> <br>
+    Coach: <%= team.coach %> <br>
+    Color: <%= team.color %> <br>
+    Age Group: <%= link_to team.age_group, team_path(team) %><br><br> 
 <% end %> 
 

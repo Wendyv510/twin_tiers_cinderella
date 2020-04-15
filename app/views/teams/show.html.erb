@@ -10,7 +10,7 @@
     <%= player.name %> 
   <% end %> 
 
-<%= link_to "Add Players", new_team_player_path(@team) %> 
+<%= link_to "Add Players", new_team_player_path(@team) %> <br>
 <%= link_to "Edit Team", edit_team_path(@team) %> <br> 
 <%= link_to "All Teams", teams_path %> <br>
 <%= button_to "Delete", @team, :method => :delete %> 
