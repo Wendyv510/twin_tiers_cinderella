@@ -17,9 +17,9 @@ class PlayersController < ApplicationController
     end 
 
     def create 
-        @player = @teams.player.build(player_params)
-         if @player.save 
-          redirect_to player_path(@player) 
+        @player = Player.new(player_params) 
+         if @player.save  
+          redirect_to players_path(@player) 
          else 
             render :new 
          end  
@@ -35,13 +35,13 @@ class PlayersController < ApplicationController
 
     def update 
         @player = Player.find(params[:id]) 
-        @player.update(name: params[:name], age: params[:age], coach_id: params[:coach_id], team_id: params[:team_id]) 
+        @player.update(name: params[:name], age: params[:age], user_id: params[:user_id], team_id: params[:team_id]) 
            redirect_to player_path(@player) 
     end 
 
       private 
 
     def player_params 
-        params.require(:player).permit(:name, :age, :team_id)
+        params.require(:player).permit(:name, :age, :team_id, :user_id)
     end 
 end

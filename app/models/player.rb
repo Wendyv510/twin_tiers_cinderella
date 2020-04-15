@@ -1,5 +1,5 @@
 class Player < ApplicationRecord
-     belongs_to :coach 
+     belongs_to :user 
      belongs_to :team 
 
      validates :name, :presence => true 

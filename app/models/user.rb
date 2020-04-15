@@ -13,6 +13,13 @@ class User < ApplicationRecord
             user.password = SecureRandom.hex 
         end 
     end 
+
+    def players_attributes=(players_attributes) 
+        player.attributes.each do |player_attribute|
+            player = Player.find_or_create_by(player_attribute) 
+            self.players << player 
+        end 
+    end 
     
     
 end

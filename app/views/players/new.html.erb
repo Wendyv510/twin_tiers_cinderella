@@ -1,17 +1,23 @@
 <h1> New Player </h1>
 
 <%= form_for(@player) do |f| %> 
-  <%= f.hidden_field :team_id %>
-
-  <%= render partial: 'layouts/errors', locals: {object:@player} %>
+  
+<% if @player.errors.any? %>
+  <div id = "error explanation">  
+    <%= render partial: 'layouts/errors', locals: {object:@player} %>
+  </div>
+  <% end %> 
 
     <%= f.label :name %> 
     <%= f.text_area :name %> <br>
     <%= f.label :age %> 
     <%= f.number_field :age %> <br>
 
+    <%= f.hidden_field :user_id %>
+
     <%= f.label :team_id, "Select a Team" %> 
-    <%= f.collection_select :team_id, Team.all, :town, :coach %><br> 
+    <%= f.collection_select :team, Team.all, :id, :color %><br> 
+
 
     <%= f.submit %> 
 <% end %> 
