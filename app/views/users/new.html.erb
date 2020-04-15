@@ -2,11 +2,11 @@
 
 <%= form_for(@user) do |f| %>
 
-   <%= render partial: 'layouts/errors', locals: {object.@user} %>
+   <%= render partial: "layouts/errors", locals: {object:@user} %>
 
-   <%=f.label :name %>  
-   <%= ftext_field :name %> <br>
-   <%= f.labe :email %>  
+   <%= f.label :name %>  
+   <%= f.text_field :name %> <br>
+   <%= f.label :email %>  
    <%= f.email_field :email %> <br>  
    <%= f.label :password %>  
    <%= f.password_field :password %><br><br> 

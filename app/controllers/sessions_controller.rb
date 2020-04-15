@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
     def new 
         @user = User.new
-        render 'users/login'    
+        render :login    
     end 
 
     def create 
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id 
             redirect_to users_path(@user) 
           else 
-            redirect_to 'login'    
+            redirect_to '/login'    
           end 
     end 
 
