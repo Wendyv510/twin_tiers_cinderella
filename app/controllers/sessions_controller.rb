@@ -3,6 +3,10 @@ class SessionsController < ApplicationController
     def home 
     end 
 
+    def login 
+        render :layout => 'login' 
+    end 
+
     def new 
         @user = User.new
         render :login    
