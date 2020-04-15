@@ -2,30 +2,6 @@
   <a href="users/new">Create Account</a>
   <a href="users/login">Login</a>
   <div class="fb-login-button" data-width="" data-size="small" data-button-type="login_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
-
-
-<%= link_to "Login via Facebook", "/auth/facebook" %> 
-
-<fb:login-button 
-  scope="public_profile,email"
-  onlogin="checkLoginState();">
-</fb:login-button>
-
-function checkLoginState() {
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-}
-
-{
-    status: 'connected',
-    authResponse: {
-        accessToken: '...',
-        expiresIn:'...',
-        signedRequest:'...',
-        userID:'...'
-    }
-}
 </div>
 
 <h1> Welcome To Twin Tiers Cinderella Softball League </h1> <br><br>
