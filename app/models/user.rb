@@ -1,8 +1,8 @@
 class User < ApplicationRecord
     has_secure_password 
 
-    has_many :teams 
-    has_many :players, through: :teams 
+    has_many :players 
+    has_many :teams, through: :players 
 
     validates :name, :email, :presence => true 
     validates :email, :name, :uniqueness => true 

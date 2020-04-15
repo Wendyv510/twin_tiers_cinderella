@@ -13,11 +13,7 @@
     <%= f.label :age %> 
     <%= f.number_field :age %> <br>
 
-    <%= f.hidden_field :user_id %>
-
-    <%= f.label :team_id, "Select a Team" %> 
-    <%= f.collection_select :team, Team.all, :id, :color %><br> 
-
+    <%= f.hidden_field :team_id %> 
 
     <%= f.submit %> 
 <% end %> 
