@@ -17,7 +17,15 @@ include Faker
     ) 
 end 
 
-
+10.times do 
+     Team.create(
+        town: Faker::Town.town, 
+        coach: User.name, 
+        color: Faker::Color.color, 
+        age_group: Faker::Number.number, 
+        user_id: rand(1..5)
+     )   
+end 
 
 30.times do 
      Player.create(
