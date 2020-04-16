@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     end 
 
     def login 
-        render :layout => 'login' 
+        render :layout => 'sessions.scss' 
     end 
 
     def new 
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id 
             redirect_to users_path(@user) 
           else 
-            redirect_to '/login'    
+            redirect_to login_path    
           end 
     end 
 
@@ -26,12 +26,10 @@ class SessionsController < ApplicationController
         @user = User.find_or_create_by(uid: auth['uid']) do |u|
             u.name = auth['info']['name']
             u.email = auth['info']['email']
-            u.password = auth['uid']
+            u.password = SecureRandom.hex
           end
-       
-          session[:user_id] = @user.id
-       
-          redirect_to '/login'
+            session[:user_id] = @user.id
+            redirect_to users_path(@user)
     end 
 
     def destroy 

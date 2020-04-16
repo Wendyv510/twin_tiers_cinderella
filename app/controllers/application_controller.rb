@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
     def authentication_required 
         if !logged_in 
-            redirect_to login 
+            redirect_to login_path 
         end 
     end 
 
