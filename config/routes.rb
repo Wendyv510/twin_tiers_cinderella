@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/login' => "sessions#new" 
   get '/auth/facebook/callback' => 'sessions#fbcreate' 
   post '/login' => "sessions#create" 
-  post '/logout' => "sessions#destroy" 
+  get '/logout' => "sessions#destroy" 
 
   resources 'users'
   resources 'teams'
