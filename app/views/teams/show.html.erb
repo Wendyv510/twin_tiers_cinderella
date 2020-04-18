@@ -1,5 +1,4 @@
-<fieldset> 
-  <legend> 
+<%= render 'layouts/navbar' %>
 
 <h3><%= @team.town %></h3>  
 <h3><%= @team.coach %></h3>  
@@ -15,8 +14,7 @@
   <% end %>
   </ul>  <br>
 
-  </legend>
-</fieldset> 
+  
 
 <%= link_to "Add Players", new_team_player_path(@team) %> <br>
 <%= link_to "Edit Team", edit_team_path(@team) %> <br> 
