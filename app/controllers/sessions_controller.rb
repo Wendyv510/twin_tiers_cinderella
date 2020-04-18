@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
             u.email = auth['info']['email']
             u.password = SecureRandom.hex
             session[:user_id] = @user.id
-            redirect_to user_path(@user)
+            redirect_to users_path(@user)
         end 
     end 
 
