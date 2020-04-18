@@ -1,11 +1,16 @@
 <%= form_for(@player) do |f| %> 
   
-    <% if @player.errors.any? %>
-      <div id = "error explanation">  
-        <%= render partial: 'layouts/errors', locals: {object:@player} %>
-      </div>
-      <% end %> 
-    
+  <% if @player.errors.any? %> 
+    <div id= "error_explanation"> 
+  <h2>  <%= pluralize(@player.errors.count,"error")prohibited this player from being saved: %> </h2>
+     <ul>
+        <% @player.errors.full_messages do |message| %> 
+           <li><%= message %></li>
+        <% end %>
+      </ul> 
+    </div>
+  <% end %> 
+        
         <%= f.label :name %> 
         <%= f.text_area :name %> <br>
         <%= f.label :age %> 

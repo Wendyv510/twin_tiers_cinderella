@@ -1,6 +1,17 @@
 <%= form_for(@team) do |f| %> 
+
+    <% if @team.errors.any? %> 
+        <div id= "error_explanation"> 
+          <h2>  <%= pluralize(@team.errors.count,"error")prohibited this team from being saved: %> </h2>
+            <ul>
+                <% @team.errors.full_messages do |message| %> 
+                    <li><%= message %></li>
+                <% end %>
+            </ul> 
+        </div>
+    <% end %> 
+
     <%= f.hidden_field :user_id %> 
- 
      <%= f.label :town %>
      <%= f.text_field :town %> <br> 
      <%= f.label :coach %> 

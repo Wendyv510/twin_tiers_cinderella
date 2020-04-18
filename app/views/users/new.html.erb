@@ -2,7 +2,15 @@
 
 <%= form_for(@user) do |f| %>
 
-   <%= render partial: "layouts/errors", locals: {object:@user} %>
+   <% if @user.errors.any? %> 
+     <div id= "error_explanation"> 
+         <ul>
+            <% @user.errors.full_messages do |message| %> 
+               <li><%= message %></li>
+            <% end %>
+         </ul> 
+      </div>
+   <% end %> 
 
    <%= f.label :name %>  
    <%= f.text_field :name %> <br>
