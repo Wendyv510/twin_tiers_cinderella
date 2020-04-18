@@ -1,5 +1,5 @@
 after :teams do 
-    @team = Team_find_by(@user_id) 
+    @team = Team_find_by(@team.id) 
     Team.players.create(
         name: Shelly Mills, 
         age: 8,
