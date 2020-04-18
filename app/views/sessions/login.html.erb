@@ -1,38 +1,27 @@
 
 
 
-<% if @user.errors.any? %> 
-  <div id= "error_explanation"> 
-      <ul>
-        <% object.errors.full_messages do |message| %> 
-          <li><%= message %></li>
-        <% end %>
-      </ul> 
-  </div>
-<% end %> 
+
     
 
-<div class="container-fluid">
-  <div class="row no-gutter">
-    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
-     <img src="https://i.pinimg.com/236x/ce/77/3b/ce773b98dc3f8f16bf328e502ae57dd7--softball-players-softball-pictures.jpg">
-    <div class="col-md-8 col-lg-6">
-      <div class="login d-flex align-items-center py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-9 col-lg-8 mx-auto">
-              <h3 class="login-heading mb-4">Welcome back!</h3> 
+          <body class="text-center"> 
+            <img src="https://i.pinimg.com/236x/ce/77/3b/ce773b98dc3f8f16bf328e502ae57dd7--softball-players-softball-pictures.jpg">
+              <form class="form-signin">
+               <h3> Please Log In </h3>  
                 <%= form_tag "/login" do %>
+                  <% if @user.errors.any? %> 
+                    <div id= "error_explanation"> 
+                      <ul>
+                        <% object.errors.full_messages do |message| %> 
+                          <li><%= message %></li>
+                        <% end %>
+                      </ul> 
+                    </div>
+                  <% end %> 
                   <label> Email: </label>
                   <%= text_field_tag :email %><br> 
                   <label> Password: </label>
                   <%= password_field_tag :password %><br> 
                   <%= submit_tag "Log In" %>
                 <% end %> 
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> 
+                
