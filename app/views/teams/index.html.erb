@@ -1,6 +1,8 @@
 
 <%= render 'layouts/navbar' %>
 
+<body class="text-center">
+
 <h1> All Teams </h1> 
 
 <% @teams.each do |team| %> 
@@ -9,4 +11,6 @@
     Color: <%= team.color %> <br>
     Age Group: <%= link_to team.age_group, team_path(team) %><br><br> 
 <% end %> 
+
+</body>
 
