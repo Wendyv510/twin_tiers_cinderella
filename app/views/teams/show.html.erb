@@ -1,14 +1,22 @@
-<h2><%= @team.town %></h2> - 
-<h2><%= @team.coach %></h2> - 
-<h2><%= @team.color %></h2> - 
-<h2><%= @team.age_group %></h2> - 
+<fieldset> 
+  <legend> 
+
+<h3><%= @team.town %></h3>  
+<h3><%= @team.coach %></h3>  
+<h3><%= @team.color %></h3>  
+<h3><%= @team.age_group %></h3>  
 
 <br> 
 
-<h3> Players </h3> 
+<h2> Players </h2> 
+  <ul>
   <% @team.players.each do |player| %> 
-    <%= player.name %> 
-  <% end %> 
+    <li><%= player.name %></li>
+  <% end %>
+  </ul>  <br>
+
+  </legend>
+</fieldset> 
 
 <%= link_to "Add Players", new_team_player_path(@team) %> <br>
 <%= link_to "Edit Team", edit_team_path(@team) %> <br> 
