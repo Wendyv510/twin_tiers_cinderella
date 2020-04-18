@@ -23,9 +23,9 @@ class SessionsController < ApplicationController
             u.name = auth['info']['name']
             u.email = auth['info']['email']
             u.password = SecureRandom.hex
-          end
             session[:user_id] = @user.id
-            redirect_to users_path(@user)
+            redirect_to user_path(@user)
+        end 
     end 
 
     def destroy 
