@@ -12,7 +12,7 @@
                   <% if @user.errors.any? %> 
                     <div id= "error_explanation"> 
                       <ul>
-                        <% object.errors.full_messages do |message| %> 
+                        <% @user.errors.full_messages do |message| %> 
                           <li><%= message %></li>
                         <% end %>
                       </ul> 
@@ -22,6 +22,8 @@
                   <%= text_field_tag :email %><br> 
                   <label> Password: </label>
                   <%= password_field_tag :password %><br> 
+                  <%= hidden_field_tag :authenticity_token, form_authenticity_token %> 
+
                   <%= submit_tag "Log In" %>
                 <% end %> 
                 

@@ -57,6 +57,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'omniauth' 
 gem 'omniauth-facebook' 
 gem 'dotenv-rails'
-gem 'thin'  
+gem 'thin', '~> 1.7'  
 
 gem 'faker'
