@@ -13,4 +13,8 @@ class Team < ApplicationRecord
             self.players << player 
         end 
     end 
+
+    def self.by_town(town) 
+        where(team: {town: "town"}) 
+    end 
 end
