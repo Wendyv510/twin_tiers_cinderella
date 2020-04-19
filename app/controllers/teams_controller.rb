@@ -5,7 +5,7 @@ class TeamsController < ApplicationController
     end 
 
     def new 
-        @team = Team.new(user_id: params[:user_id])   
+        @team = Team.new   
     end 
 
     def create 

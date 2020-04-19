@@ -11,7 +11,7 @@
                 <%= form_for(@user) do |f|%>
                   <% if @user.errors.any? %>
                     <div id="error_explanation">
-                      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this user from being saved:</h2>
+                      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
  
                   <ul>
                     <% @user.errors.full_messages.each do |msg| %>
@@ -22,8 +22,9 @@
                   <% end %>
                   <%= f.label :email %>
                   <%= f.text_field :email %><br> 
-                  <%= :password %>
-                  <%= f.password_field :password %><br> 
+                  <%= f.label :password %>
+                  <%= f.password_field :password %><br>
+                  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>  
                   
 
                   <%= f.submit "Log In" %>

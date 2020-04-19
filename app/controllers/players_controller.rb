@@ -19,7 +19,7 @@ class PlayersController < ApplicationController
     def create
         @player = current_user.players.build(player_params)   
         
-         if @player.save!  
+         if @player.save  
           redirect_to players_path(@player) 
          else 
             render :new 
