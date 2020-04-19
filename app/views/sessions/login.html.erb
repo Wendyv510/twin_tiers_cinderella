@@ -8,22 +8,24 @@
             <img src="https://i.pinimg.com/236x/ce/77/3b/ce773b98dc3f8f16bf328e502ae57dd7--softball-players-softball-pictures.jpg">
               <form class="form-signin">
                <h3> Please Log In </h3>  
-                <%= form_tag "/login" do %>
-                  <% if @user.errors.any? %> 
-                    <div id= "error_explanation"> 
-                      <ul>
-                        <% @user.errors.full_messages do |message| %> 
-                          <li><%= message %></li>
-                        <% end %>
-                      </ul> 
-                    </div>
-                  <% end %> 
-                  <label> Email: </label>
-                  <%= text_field_tag :email %><br> 
-                  <label> Password: </label>
-                  <%= password_field_tag :password %><br> 
-                  <%= hidden_field_tag :authenticity_token, form_authenticity_token %> 
+                <%= form_for(@user) do |f|%>
+                  <% if @user.errors.any? %>
+                    <div id="error_explanation">
+                      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this user from being saved:</h2>
+ 
+                  <ul>
+                    <% @user.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                  </ul>
+                  </div>
+                  <% end %>
+                  <%= f.label :email %>
+                  <%= f.text_field :email %><br> 
+                  <%= :password %>
+                  <%= f.password_field :password %><br> 
+                  
 
-                  <%= submit_tag "Log In" %>
+                  <%= f.submit "Log In" %>
                 <% end %> 
                 
