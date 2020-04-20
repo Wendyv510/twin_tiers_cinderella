@@ -18,13 +18,13 @@ class SessionsController < ApplicationController
           end 
     end 
 
-    def fbcreate 
+    def fbcreate  
         @user = User.find_or_create_by(uid:auth['uid']) do |u|
             
             u.email = auth['info']['email']
             u.password = SecureRandom.hex
             session[:user_id] = @user.id
-            redirect_to users_path(@user)
+            redirect_to users_path(@user) 
         end 
     end 
 
