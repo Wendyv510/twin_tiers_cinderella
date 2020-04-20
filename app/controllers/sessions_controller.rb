@@ -28,6 +28,16 @@ class SessionsController < ApplicationController
         end 
     end 
 
+    def ghcreate 
+        @user = User.find_or_create_by(uid: auth['uid']) do |u|
+            
+            u.email = auth['info']['email']
+            u.password = SecureRandom.hex
+            session[:user_id] = @user.id
+            redirect_to users_path(@user)
+        end 
+    end 
+
     def destroy 
         session.delete("user_id") 
         redirect_to root_path 
