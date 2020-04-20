@@ -8,7 +8,7 @@
             <img src="https://i.pinimg.com/236x/ce/77/3b/ce773b98dc3f8f16bf328e502ae57dd7--softball-players-softball-pictures.jpg">
               <div class="form-signin">
                <h3> Please Log In </h3>  
-                <%= form_for(@user) do |f|%>
+                <%= form_tag '/login.' do %>
                   <% if @user.errors.any? %>
                     <div id="error_explanation">
                       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -20,12 +20,12 @@
                   </ul>
                   </div>
                   <% end %>
-                  <%= f.label :email %>
-                  <%= f.text_field :email %><br> 
-                  <%= f.label :password %>
-                  <%= f.password_field :password %><br>
+                  <label> Email </label>
+                  <%= text_field_tag :email %><br> 
+                  <labe> Password </label>
+                  <%= password_field_tag :password %><br>
                   
 
-                  <%= f.submit "Log In" %>
+                  <%= submit_tag "Log In" %>
                 <% end %> 
                 
