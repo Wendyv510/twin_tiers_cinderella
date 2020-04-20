@@ -17,6 +17,7 @@ class PlayersController < ApplicationController
     end 
 
     def create
+        
         @player = current_user.players.build(player_params)   
         
          if @player.save  

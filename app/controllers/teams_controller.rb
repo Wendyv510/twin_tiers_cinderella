@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
 
     def index 
-        if params[:filter] 
+        if params[:town] == "Town"  
             @teams = @teams.by_town(town)  
         else 
            @teams = Team.all 

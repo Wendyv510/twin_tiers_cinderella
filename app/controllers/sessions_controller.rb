@@ -23,9 +23,10 @@ class SessionsController < ApplicationController
             
             u.email = auth['info']['email']
             u.password = SecureRandom.hex
-            session[:user_id] = @user.id
-            redirect_to users_path(@user) 
         end 
+        binding.pry
+            session[:user_id] = @user.id
+            redirect_to users_path(@user)  
     end 
 
     def ghcreate 
