@@ -8,23 +8,19 @@ class SessionsController < ApplicationController
         render :login    
     end 
 
-    def login 
-
-    end 
-
     def create 
-        @user = User.find_by(email: params[:user][:email])
-          if @user && @user.authenticate(params[:user][:password])  
+        @user = User.find_by(email: params[:email])
+          if @user && @user.authenticate(params[:password])  
             session[:user_id] = @user.id 
-            redirect_to user_path(@user) 
+            redirect_to users_path(@user) 
           else 
-            render :login      
+            redirect_to login_path       
           end 
     end 
 
     def fbcreate 
         @user = User.find_or_create_by(uid: auth['uid']) do |u|
-            u.name = auth['info']['name']
+            
             u.email = auth['info']['email']
             u.password = SecureRandom.hex
             session[:user_id] = @user.id
