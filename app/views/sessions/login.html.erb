@@ -8,7 +8,7 @@
             <img src="https://i.pinimg.com/236x/ce/77/3b/ce773b98dc3f8f16bf328e502ae57dd7--softball-players-softball-pictures.jpg">
               <div class="form-signin">
                <h3> Please Log In </h3>  
-                <%= form_tag '/login.' do %>
+                <%= form_tag '/login' do %>
                   <% if @user.errors.any? %>
                     <div id="error_explanation">
                       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>

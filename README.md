@@ -8,8 +8,7 @@ To use the science fair app, in terminal ...
 -cd twin_tiers_cinderella
 -bundle install
 -rake db:migrate
--rake db:seed
--rails s and open https://localhost:3000 in browser
+-thin start --ssl and open https://localhost:3000 in browser
 
 Description:
 This app is set up so a user/coach can register teams and players for the Cinderella Softball league for the Twin Tiers region in Upstate New York.
