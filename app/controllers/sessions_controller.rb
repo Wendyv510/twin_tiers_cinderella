@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         @user = User.find_by(email: params[:email])
           if @user && @user.authenticate(params[:password])  
             session[:user_id] = @user.id 
-            redirect_to users_path(@user) 
+            redirect_to user_path(@user) 
           else 
             redirect_to login_path       
           end 
@@ -23,21 +23,12 @@ class SessionsController < ApplicationController
             
             u.email = auth['info']['email']
             u.password = SecureRandom.hex
+        @user.save
         end 
-        binding.pry
             session[:user_id] = @user.id
             redirect_to users_path(@user)  
     end 
 
-    def ghcreate 
-        @user = User.find_or_create_by(uid:auth['uid']) do |u|
-            
-            u.email = auth['info']['email']
-            u.password = SecureRandom.hex
-            session[:user_id] = @user.id
-            redirect_to users_path(@user)
-        end 
-    end 
 
     def destroy 
         session.delete("user_id") 
