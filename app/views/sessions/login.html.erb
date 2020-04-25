@@ -9,17 +9,9 @@
               <div class="form-signin">
                <h3> Please Log In </h3>  
                 <%= form_tag '/login' do %>
-                  <% if @user.errors.any? %>
-                    <div id="error_explanation">
-                      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
- 
-                  <ul>
-                    <% @user.errors.full_messages.each do |msg| %>
-                      <li><%= msg %></li>
-                    <% end %>
-                  </ul>
-                  </div>
-                  <% end %>
+                  
+                  <%= render 'layouts/errors', object: @user %>
+
                   <label> Email </label>
                   <%= text_field_tag :email %><br> 
                   <labe> Password </label>

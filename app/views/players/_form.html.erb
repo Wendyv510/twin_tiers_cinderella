@@ -1,14 +1,6 @@
 <%= form_for(@player) do |f| %> 
   
-  <% if @player.errors.any? %> 
-    <div id= "error_explanation"> 
-     <ul>
-        <% @player.errors.full_messages do |message| %> 
-           <li><%= message %></li>
-        <% end %>
-      </ul> 
-    </div>
-  <% end %> 
+  <%= render 'layouts/errors', object: @player %>
         
         <%= f.label :name %> 
         <%= f.text_area :name %> <br>
