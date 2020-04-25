@@ -14,7 +14,7 @@ class Team < ApplicationRecord
         end 
     end 
 
-    def by_town(town) 
-        where(team: {town: "town"}) 
+    def self.by_town(town) 
+        where(town: town) 
     end 
 end
