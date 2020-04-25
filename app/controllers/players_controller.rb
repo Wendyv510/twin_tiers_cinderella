@@ -9,7 +9,7 @@ class PlayersController < ApplicationController
     end 
 
     def new 
-        if params[:team_id] && @team = Team.find_by(params[:team_id]) 
+        if params[:team_id] && @team = Team.find_by(params[:team_id])  
             @player = @team.players.build
         else   
             @player = Player.new 
@@ -44,6 +44,6 @@ class PlayersController < ApplicationController
       private 
 
     def player_params 
-        params.require(:player).permit(:name, :age, :team_id)
+        params.require(:player).permit(:name, :age, :team_id, :user_id)
     end 
 end
