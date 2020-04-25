@@ -2,7 +2,7 @@ class TeamsController < ApplicationController
 
     def index 
         if params[:town]   
-            @teams = @teams.by_town(:town => params[:town])  
+            @teams = Team.by_town(:town => params[:town])  
         else 
            @teams = Team.all 
         end  
@@ -44,4 +44,6 @@ class TeamsController < ApplicationController
     def team_params 
         params.require(:team).permit(:town, :coach, :color, :age_group, :user_id) 
     end 
+
+
 end
