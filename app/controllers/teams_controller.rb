@@ -32,10 +32,10 @@ class TeamsController < ApplicationController
            redirect_to team_path(@team) 
     end 
 
-    def delete 
+    def destroy 
         @team = Team.find(params[:id]) 
         @team.delete 
-           redirect_to root_path 
+           redirect_to teams_path 
     end 
 
 

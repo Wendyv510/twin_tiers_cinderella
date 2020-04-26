@@ -10,7 +10,7 @@ class PlayersController < ApplicationController
 
     def new 
         if params[:team_id] && @team = Team.find_by(params[:team_id])  
-            @player = @team.players.build
+            @player = @team.players.build 
         else   
             @player = Player.new 
         end 
@@ -41,6 +41,13 @@ class PlayersController < ApplicationController
         @player.save
             redirect_to player_path(@player) 
     end 
+
+    def destroy 
+        @player = Player.find(params[:id]) 
+        @player.delete 
+           redirect_to players_path 
+    end 
+
 
       private 
 

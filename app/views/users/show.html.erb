@@ -4,15 +4,17 @@
     background-color: #cccccc;
    }> 
 
-<h1> Welcome <%= @user %> </h1> <br>
+<h1> Welcome <%= current_user.name %> </h1> <br>
 
-<%= button_to "View All Teams", teams_path %> <br>
+<img src="https://lh3.googleusercontent.com/proxy/c3c43f5v52A3eP09G6Tb0vlYvjDGq2jnqP4qCpTLchtCbYpX6AqyocINvWp5vRJ2-qcxdgv7qp-_xzM3Po3jj1Zvwn1NM9MCzrKCUVjxkOQp7T_cm5yFENN1Gw02s_S6v-UN21LQDL6MYwKWFAb6Bd2cfaVLl_EUytojdw">
+
+ <!-- <%= button_to "View All Teams", teams_path %> <br> -->
 
 <%= button_to "Register New Team", new_team_path %> <br> 
 
-<%= button_to "View my Teams", teams_path(session[:user_id]) %> <br> 
+<!-- <%= button_to "View my Teams", user_teams_path(current_user) %> <br> -->
 
-<%= button_to "Register New Players", new_player_path(@user) %> <br> 
+<!-- <%= button_to "Register New Players", new_player_path(@user) %> <br> --> 
 
 
 
