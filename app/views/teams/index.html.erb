@@ -10,7 +10,7 @@
 <div class="filter"> 
   <h4> Filter by Town: </h4> 
      <%= form_tag('/teams', method: 'get') do %> 
-        <%= select_tag "location", options_from_collection_for_select(Team.all,"id","town") %> 
+        <%= select_tag "location", options_from_collection_for_select(Team.all,"town","town") %> 
         <%= submit_tag "Filter" %> 
      <% end %> 
 </div> 
