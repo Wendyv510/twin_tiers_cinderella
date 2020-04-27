@@ -1,23 +1,19 @@
 class PlayersController < ApplicationController
 
     def index 
-        if params[:team_id] && @team = Team.find_by(params[:team_id]) 
-            @players = @team.players
-        else   
-            @players = Player.all 
-        end  
+            @players = Player.all   
     end 
 
     def new 
         if params[:team_id] && @team = Team.find_by(params[:team_id])  
             @player = @team.players.build 
+            @player.save 
         else   
             @player = Player.new 
         end 
     end 
 
     def create
-        
         @player = current_user.players.build(player_params)   
         
          if @player.save  

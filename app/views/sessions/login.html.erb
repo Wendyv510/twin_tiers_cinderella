@@ -1,23 +1,19 @@
 
-
-
-
-    
-
-          <body class="text-center"> 
-            <img src="https://i.pinimg.com/236x/ce/77/3b/ce773b98dc3f8f16bf328e502ae57dd7--softball-players-softball-pictures.jpg">
-              <div class="form-signin">
-               <h3> Please Log In </h3>  
-                <%= form_tag '/login' do %>
+<body class="text-center"> 
+  <img src="https://i.pinimg.com/236x/ce/77/3b/ce773b98dc3f8f16bf328e502ae57dd7--softball-players-softball-pictures.jpg">
+    <div class="form-signin">
+      <h3> Please Log In </h3>  
+        <%= form_tag '/login' do %>
                   
-                  <%= render 'layouts/errors', object: @user %>
+        <%= render 'layouts/errors', object: @user %>
 
-                  <label> Email </label>
-                  <%= text_field_tag :email %><br> 
-                  <labe> Password </label>
-                  <%= password_field_tag :password %><br>
+          <label> Email </label>
+          <%= text_field_tag :email %><br> 
+          <label> Password </label>
+          <%= password_field_tag :password %><br>
                   
 
-                  <%= submit_tag "Log In" %>
-                <% end %> 
-                
+          <%= submit_tag "Log In" %>
+        <% end %> 
+    </div>
+</body>

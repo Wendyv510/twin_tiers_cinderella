@@ -3,22 +3,26 @@
 
 <body class="text-center">
 
-<h1> All Teams </h1> 
+<h1> All Teams </h1> <br>
 
-<div> 
+<%= button_to "Register New Team", new_team_path %> <br>
+
+<div class="filter"> 
   <h4> Filter by Town: </h4> 
      <%= form_tag('/teams', method: 'get') do %> 
-        <%= select_tag "town", options_from_collection_for_select(Team.all,"id","town") %> 
+        <%= select_tag "location", options_from_collection_for_select(Team.all,"id","town") %> 
         <%= submit_tag "Filter" %> 
      <% end %> 
 </div> 
 
-<% @teams.each do |team| %> 
-    Town: <%= team.town %> <br>
-    Coach: <%= team.coach %> <br>
-    Color: <%= team.color %> <br>
-    Age Group: <%= link_to team.age_group, team_path(team) %><br><br> 
-<% end %> 
+<div class="teams_index"> 
+   <% @teams.each do |team| %> 
+      Town: <%= team.town %> <br>
+      Coach: <%= team.coach %> <br>
+      Color: <%= team.color %> <br>
+      Age Group: <%= link_to team.age_group, team_path(team) %><br><br> 
+   <% end %>
+</div> 
 
 </body>
 

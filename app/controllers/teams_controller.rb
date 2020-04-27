@@ -1,8 +1,8 @@
 class TeamsController < ApplicationController
 
     def index 
-        if params[:town]    
-            @teams = Team.by_town(:town => params[:town])  
+        if params[:location]    
+            @teams = Team.by_town([:town] == params[:town])  
         else 
            @teams = Team.all 
         end  
