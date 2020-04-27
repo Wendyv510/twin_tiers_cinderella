@@ -5,9 +5,8 @@ class PlayersController < ApplicationController
     end 
 
     def new 
-        if params[:team_id] && @team = Team.find_by(params[:team_id])  
-            @player = @team.players.build 
-            @player.save 
+        if params[:team_id] && @team = Team.find_by_id(params[:team_id])  
+            @player = @team.players.build  
         else   
             @player = Player.new 
         end 

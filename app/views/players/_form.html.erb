@@ -1,7 +1,9 @@
+<%= render 'layouts/errors', object: @player %>
+        
+
 <%= form_for(@player) do |f| %> 
   
-  <%= render 'layouts/errors', object: @player %>
-        
+  
         <%= f.label :name %> 
         <%= f.text_area :name %> <br>
         <%= f.label :age %> 
