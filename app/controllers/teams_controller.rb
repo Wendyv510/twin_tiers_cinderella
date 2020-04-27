@@ -26,10 +26,10 @@ class TeamsController < ApplicationController
         @team = Team.find(params[:id]) 
     end 
 
-    def update 
+    def update  
         @team = Team.find(params[:id]) 
         @team.update(town: params[:town], coach: params[:coach], color: params[:color], age_group: params[:age_group]) 
-           redirect_to team_path(@team) 
+           redirect_to team_path(@team)  
     end 
 
     def destroy 

@@ -31,11 +31,11 @@ class PlayersController < ApplicationController
         @player = Player.find(params[:id]) 
     end 
 
-    def update 
-        @player = Player.find(params[:id]) 
-        @player.update(params.require(:player).permit(:name, :age)) 
-        @player.save
-            redirect_to player_path(@player) 
+    def update  
+         @player = Player.find(params[:id]) 
+         @player.update(params.require(:player).permit(:name, :age)) 
+         @player.save
+            redirect_to player_path(@player)  
     end 
 
     def destroy 
