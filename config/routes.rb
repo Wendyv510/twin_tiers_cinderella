@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   end 
 
   resources :teams do 
-    resources :players, only: [:index, :new, :show, :create] 
+    resources :player_teams, only: [:index, :new, :show, :create] 
   end 
 
 end

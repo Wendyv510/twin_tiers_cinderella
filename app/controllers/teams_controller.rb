@@ -9,7 +9,11 @@ class TeamsController < ApplicationController
     end 
 
     def new 
-        @team = Team.new   
+      if params[:user_id] && @team = Team.find_by_id(params[:user_id])
+        @team = @user.teams.build 
+      else 
+        @team = Team.new
+      end    
     end 
 
     def create 
