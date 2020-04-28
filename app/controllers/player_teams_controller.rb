@@ -13,7 +13,7 @@ class PlayerTeamsController < ApplicationController
     end 
 
      def create 
-        @player_team = @team.player_teams.build
+        @player_team = @player.player_teams.build
           if @player_team.save 
             redirect_to team_path(@team) 
           else 
