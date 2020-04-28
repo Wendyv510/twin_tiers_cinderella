@@ -7,10 +7,10 @@ class Team < ApplicationRecord
     validates :color, :presence => true 
     validates :age_group, :presence => true  
 
-    def players_attributes=(players_attributes) 
-        player.attributes.each do |player_attribute|
-            player = Player.find_or_create_by(player_attribute) 
-            self.players << player 
+    def player_team_attributes=(player_team_attributes) 
+        player_team.attributes.each do |player_team_attribute|
+            player_team = Player_team.find_or_create_by(player_attribute) 
+            self.player_teams << player_team 
         end 
     end 
 
