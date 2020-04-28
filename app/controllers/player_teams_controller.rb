@@ -13,12 +13,14 @@ class PlayerTeamsController < ApplicationController
     end 
 
      def create 
-        @player_team = @player.player_teams.build
+        if params[:player_id] && @team = Team.find_by_id(params[:player_id])
+        @player_team = @player.player_teams.build  
           if @player_team.save 
             redirect_to team_path(@team) 
           else 
             render :new 
-          end 
+          end
+        end  
      end 
 
      def show 
