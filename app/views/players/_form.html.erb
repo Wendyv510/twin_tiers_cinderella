@@ -1,7 +1,7 @@
 <%= render 'layouts/errors', object: @player %>
         
 
-<%= form_for(@player) do |f| %> 
+    <%= form_for(@player) do |f| %> 
   
   
         <%= f.label :name %> 
@@ -9,7 +9,5 @@
         <%= f.label :date_of_birth %> 
         <%= f.number_field :date_of_birth %> <br>
     
-          
-    
-        <%= f.submit %> 
+         <%= f.submit %> 
     <% end %> 

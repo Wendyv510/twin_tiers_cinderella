@@ -1,0 +1,17 @@
+<%= render 'layouts/navbar' %><br><br>
+
+<body class="text-center">
+
+<h5><%= @player_team.player.name %></h5><br>  
+<h5><%= @player_team.team.town %></h5><br>
+<h5><%= @player_team.team.coach %></h5><br>
+<h5><%= @player_team.team.color %></h5><br>
+<h5><%= @player_team.team.age_group %></h5><br>
+<h5><%= @player_team.position %></h5><br>
+<h5><%= @player_team.year %></h5><br>
+
+
+<%= button_to "Edit Player Team", edit_player_team_path(@player_team) %> 
+<%= button_to "Delete", @player_team, :method => :delete %> 
+
+</body>

@@ -1,0 +1,19 @@
+<%= render 'layouts/navbar' %>
+
+<body class="text-center">
+
+<h1> All Player Teams </h1> 
+
+<% @player_teams.each do |player_team| %> 
+    Name: <%= player_team.player.name %><br>  
+    Town: <%= player_team.team.town %><br>
+    Coach:<%= player_team.team.coach %><br>
+    Color:<%= player_team.team.color %><br>
+    Age Group: <%= player_team.team.age_group %>U<br>
+    Position: <%= player_team.position %><br>
+    Year: <%= player_team.year %><br>
+     
+    
+<% end %>
+
+</body>
