@@ -10,14 +10,15 @@
 
 <h2> Players </h2> 
   <ul>
-  <% @team.players.each do |player| %> 
+  <% @team.player_teams.each do |player| %> 
     <li><%= player.name %></li>
   <% end %>
   </ul>  <br>
 
 </body>
 
-<%= link_to "Add Players", new_team_player_path(@team) %> <br>
+<%= link_to "Add Players", new_team_player_team_path(@team) %> <br>
+<%= link_to "Register New Player", new_player_path %> <br>
 <%= link_to "Edit Team", edit_team_path(@team) %> <br> 
 <%= link_to "All Teams", teams_path %> <br>
 <%= button_to "Delete", @team, :method => :delete %> 

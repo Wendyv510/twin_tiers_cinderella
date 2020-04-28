@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2020_04_28_133822) do
 
   create_table "players", force: :cascade do |t|
     t.string "name"
-    t.string "date_of_birth"
+    t.date "date_of_birth"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

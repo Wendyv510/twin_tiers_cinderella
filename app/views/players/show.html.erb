@@ -3,10 +3,8 @@
 <body class="text-center">
 
 <h5><%= @player.name %></h5><br> 
-<h5><%= @player.age %></h5><br> 
-<h5><%= @player.team.town %></h5><br> 
-<h5><%= @player.team.coach %></h5><br>
-<h5><%= @player.team.color %></h5><br>
+<h5><%= @player.date_of_birth %></h5><br> 
+
 
 <%= button_to "Edit Player", edit_player_path(@player) %> 
 <%= button_to "Delete", @player, :method => :delete %> 

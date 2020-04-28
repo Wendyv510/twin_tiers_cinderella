@@ -5,14 +5,20 @@ class PlayerTeamsController < ApplicationController
     end 
 
     def new 
-     if params[:team_id] && @team = Team.find_by_id(params[:team_id])
-        @player_team = @team.player_teams.build 
-     else 
-        @player_team = Player_team.new 
-     end 
+        if params[:team_id] && @team = Team.find_by_id(params[:team_id])
+            @player_team = @team.player_teams.build 
+        else 
+            @player_team = Player_team.new 
+        end 
+    end 
 
      def create 
-        @player_team = @player.player_teams.build
+        @player_team = @team.player_teams.build
+          if @player_team.save 
+            redirect_to team_path(@team) 
+          else 
+            render :new 
+          end 
      end 
 
      def show 
