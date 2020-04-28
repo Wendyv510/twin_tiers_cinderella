@@ -1,7 +1,7 @@
 class Player < ApplicationRecord
-     belongs_to :user 
-     belongs_to :team 
+      
+     has_many :teams, through: :player_teams   
 
      validates :name, :presence => true 
-     validates :age, :presence => true 
+     validates :d.o.b, :presence => true 
 end

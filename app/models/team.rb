@@ -1,7 +1,7 @@
 class Team < ApplicationRecord
     
-    has_many :players 
-    has_many :users, through: :players 
+    belongs_to :user 
+    has_many :players, through: :player_teams 
 
     validates :town, :presence => true 
     validates :color, :presence => true 
