@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources 'users'
   resources 'teams'
   resources 'players'
+  resources 'player_teams' 
 
   post 'teams/new' => "teams#new"
   post 'players/new' => "players#new" 
