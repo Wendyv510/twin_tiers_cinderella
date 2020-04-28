@@ -9,7 +9,7 @@ class TeamsController < ApplicationController
     end 
 
     def new 
-      if params[:user_id] && @team = Team.find_by_id(params[:user_id])
+      if params[:user_id] && @user = User.find_by_id(params[:user_id])
         @team = @user.teams.build 
       else 
         @team = Team.new
@@ -17,9 +17,12 @@ class TeamsController < ApplicationController
     end 
 
     def create 
-        @team = Team.create(team_params)
-        @team.save 
-           redirect_to teams_path(@team)  
+        @team = current_user.teams.build(team_params)
+        if @team.save 
+           redirect_to teams_path(@team)
+        else 
+            render :new 
+        end   
     end 
 
     def show 
