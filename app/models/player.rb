@@ -8,7 +8,7 @@ class Player < ApplicationRecord
 
      def player_team_attributes=(player_team_attributes) 
           player_team.attributes.each do |player_team_attribute|
-              player_team = Player_team.find_or_create_by(player_attribute) 
+              player_team = Player_team.find_or_create_by(player_team_attribute) 
               self.player_teams << player_team 
           end 
       end 

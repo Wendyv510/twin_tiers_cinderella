@@ -5,6 +5,18 @@
 <h5><%= @player.name %></h5><br> 
 <h5><%= @player.date_of_birth %></h5><br> 
 
+<% @player.teams.each do |team| %> 
+    <%= team.town %> 
+    <%= team.coach %> 
+    <%= team.color %> 
+    <%= team.age %> 
+<% end %> 
+
+<% @player.player_teams.each do |player_team| %> 
+    <%= player_team.position %> 
+    <%= player_team.year %> 
+<% end %> 
+
 
 <%= button_to "Edit Player", edit_player_path(@player) %> 
 <%= button_to "Delete", @player, :method => :delete %> 

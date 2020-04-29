@@ -6,7 +6,7 @@ class PlayerTeamsController < ApplicationController
 
     def new 
         if params[:team_id] && @team = Team.find_by_id(params[:team_id])
-            @player_team = @team.player_teams.build 
+            @player_team = @team.player_teams.players.build 
         else 
             @player_team = Player_team.new 
         end 
@@ -14,7 +14,7 @@ class PlayerTeamsController < ApplicationController
 
      def create 
         if params[:player_id] && @team = Team.find_by_id(params[:player_id])
-        @player_team = @player.player_teams.build  
+        @player_team = @player.player_teams.teams.build  
           if @player_team.save 
             redirect_to team_path(@team) 
           else 

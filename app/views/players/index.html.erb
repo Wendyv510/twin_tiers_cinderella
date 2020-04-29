@@ -2,7 +2,9 @@
 
 <body class="text-center">
 
-<h1> All Players Registered </h1> 
+<h1> All Players Registered </h1>
+
+<%= button_to "Register New Player", new_player_path %> <br>
 
 <% @players.each do |player| %> 
     Name: <%= link_to player.name, player_path(player) %> <br> 
