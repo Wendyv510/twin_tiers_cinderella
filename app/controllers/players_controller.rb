@@ -28,7 +28,7 @@ class PlayersController < ApplicationController
 
     def update  
          @player = Player.find(params[:id]) 
-         @player.update(params.require(:player).permit(:name, :age)) 
+         @player.update(params.require(:player).permit(:name, :date_of_birth)) 
          @player.save
             redirect_to player_path(@player)  
     end 
