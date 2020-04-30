@@ -3,7 +3,7 @@
 
     <%= form_for(@player_team) do |f| %> 
   
-       <%= select_tag "Player", options_from_collection_for_select(Player.all,"id","name"), {:prompt => "Select Player"} %><br><br>
+       <%= select_tag :player_id, options_from_collection_for_select(Player.all,"id","name"), {:prompt => "Select Player"} %><br><br>
        
         <%= f.label :position %> 
         <%= f.text_area :position %> <br>
