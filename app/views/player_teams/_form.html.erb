@@ -1,10 +1,10 @@
 <%= render 'layouts/errors', object: @player_team %>
         
 
-<%= form_for(@player_team) do |f| %> "
+    <%= form_for(@player_team) do |f| %> 
   
        <%= select_tag "Player", options_from_collection_for_select(Player.all,"id","name"), {:prompt => "Select Player"} %><br><br>
-       <%= button_to "Register New Player", new_player_path %> <br>
+       
         <%= f.label :position %> 
         <%= f.text_area :position %> <br>
         <%= f.label :year %> 

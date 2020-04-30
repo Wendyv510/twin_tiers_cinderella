@@ -6,15 +6,16 @@ class PlayerTeamsController < ApplicationController
 
     def new 
         if params[:team_id] && @team = Team.find_by_id(params[:team_id])
-            @player_team = @team.player_teams.players.build 
+            @player_team = @team.player_teams.build 
         else 
             @player_team = Player_team.new 
         end 
     end 
 
-     def create 
-        if params[:player_id] && @team = Team.find_by_id(params[:player_id])
-        @player_team = @player.player_teams.teams.build  
+     def create
+     binding.pry
+        if player_team_params[:team_id] && @team = Team.find_by_id(params[:team_id])
+        @player_team = @player.player_teams.build
           if @player_team.save 
             redirect_to team_path(@team) 
           else 
@@ -47,7 +48,7 @@ class PlayerTeamsController < ApplicationController
     private 
 
     def player_team_params
-        params.require(:player_teams).permit(:position, :year, :team_id, :player_id)
+        params.require(:player_team).permit(:position, :year, :team_id, :player_id)
     end  
 
 end
