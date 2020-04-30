@@ -1,23 +1,14 @@
 
-<body class="text-center" {
-    background-image: url("https://lh3.googleusercontent.com/proxy/mnCL25XDfO1MYQt4AiYjWE3ku_w-Jqi6KlQaU-Ot7kWZjBrgQatpS8Zl39rcmYc3iIaE2Z4kUAfv9lfdn5eax9MkrmeKIF-ZNyuYNMv9FkpHyoZeyPSljadqtwVYjyitPSU69P7NumSXm5vW68CJTNPADYEeJ9zLHkCfpjFded1IZ1PpetfIk4ahsCXgzw");
-    background-color: #cccccc;
-   }> 
+<body class="text-center">
 
 <h1> Welcome <%= current_user.name %> </h1> <br>
 
-<img src="https://lh3.googleusercontent.com/proxy/c3c43f5v52A3eP09G6Tb0vlYvjDGq2jnqP4qCpTLchtCbYpX6AqyocINvWp5vRJ2-qcxdgv7qp-_xzM3Po3jj1Zvwn1NM9MCzrKCUVjxkOQp7T_cm5yFENN1Gw02s_S6v-UN21LQDL6MYwKWFAb6Bd2cfaVLl_EUytojdw">
-
-<%= button_to "View My Teams", "/users/#{current_user.id}/teams" %> <br> 
- <a href="/teams", style="color:black">View All Teams</a>
+<img src= "https://clipartmag.com/images/softball-cartoon-images-clipart-23.jpg">
+<br>
+<a href="/teams", style="color:black">View All Teams</a><br><br>
+<%= button_to "View My Teams", "/users/#{current_user.id}/teams" %> <br>  
 <%= button_to "Register New Team", new_team_path %> <br>
 <%= button_to "Register New Player", new_player_path %> <br>  
-
-</body> 
-
-
-
-
 
 <%= button_to "Logout", logout_path %>
 
