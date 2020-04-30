@@ -8,7 +8,7 @@
 
 <img src="https://lh3.googleusercontent.com/proxy/c3c43f5v52A3eP09G6Tb0vlYvjDGq2jnqP4qCpTLchtCbYpX6AqyocINvWp5vRJ2-qcxdgv7qp-_xzM3Po3jj1Zvwn1NM9MCzrKCUVjxkOQp7T_cm5yFENN1Gw02s_S6v-UN21LQDL6MYwKWFAb6Bd2cfaVLl_EUytojdw">
 
- <!-- <%= button_to "View My Teams", user_teams_path(@user) %> <br> -->
+  <%= button_to "View My Teams", user_teams_path(current_user.id) %> <br> 
  <a href="/teams", style="color:black">View All Teams</a>
 <%= button_to "Register New Team", new_team_path %> <br>
 <%= button_to "Register New Player", new_player_path %> <br>  

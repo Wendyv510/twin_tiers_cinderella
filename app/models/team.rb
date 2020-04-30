@@ -19,4 +19,8 @@ class Team < ApplicationRecord
     def self.by_town(town)
         where(town: town) 
     end 
+
+    def user_teams
+        where(session[:user_id] == @team.user_id) 
+    end 
 end
