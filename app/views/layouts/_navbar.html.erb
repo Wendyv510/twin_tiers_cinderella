@@ -1,7 +1,8 @@
 <nav class="topnav" style="background-color: green"> 
   <a href="/teams", style="color:black">View All Teams</a> 
   <a href="/players">View All Players</a> 
-   <a href="/users/#{:user_id}/teams", style="color:black">View My Teams</a> 
+  <a href="/users/#{current_user.id}/teams", style="color:black">View My Teams</a>
+  <%= link_to "View My Teams", user_teams_path(current_user.id) %>  
 
   
   <a href="/logout", style="color:red"> Logout </a> 

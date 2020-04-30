@@ -21,6 +21,6 @@ class Team < ApplicationRecord
     end 
 
     def user_teams
-        where(session[:user_id] == @team.user_id) 
+        where(current_user.id == @team.user_id) 
     end 
 end
