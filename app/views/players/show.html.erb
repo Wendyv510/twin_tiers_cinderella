@@ -3,18 +3,20 @@
 <body class="text-center">
 
 <h5><%= @player.name %></h5><br> 
-<h5><%= @player.date_of_birth %></h5><br> 
+<h5><%= @player.date_of_birth %></h5><br>
+
+<h6> Teams: </h6> 
 
 <% @player.teams.each do |team| %> 
-    <%= team.town %> 
-    <%= team.coach %> 
-    <%= team.color %> 
-    <%= team.age %> 
+    Town:<%= team.town %> /
+    Coach:<%= team.coach %>/ 
+    Color:<%= team.color %> /
+    Age Group:<%= team.age_group %>/ 
 <% end %> 
 
 <% @player.player_teams.each do |player_team| %> 
-    <%= player_team.position %> 
-    <%= player_team.year %> 
+    Postion:<%= player_team.position %>/ 
+    Year:<%= player_team.year %> 
 <% end %> 
 
 

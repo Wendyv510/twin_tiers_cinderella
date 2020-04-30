@@ -5,13 +5,11 @@
     <%= form_for(@player_team) do |f| %> 
   
        <%= select_tag :player_id, options_from_collection_for_select(Player.all,"id","name"), {:prompt => "Select Player"} %><br><br>
-       
+       <%= f.hidden_field :team_id %> 
         <%= f.label :position %> 
         <%= f.text_area :position %> <br>
         <%= f.label :year %> 
         <%= f.text_area :year %> <br>
 
-        <%= f.hidden_field :team_id %>   
-        
         <%= f.submit "Add Player" %> 
     <% end %> 
