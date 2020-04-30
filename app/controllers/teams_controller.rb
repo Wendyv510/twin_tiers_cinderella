@@ -3,6 +3,9 @@ class TeamsController < ApplicationController
     def index 
         if params[:location]    
             @teams = Team.by_town(params[:location])  
+        elsif
+            @user = User.find_by(params[:user_id]) 
+            @teams = @user.teams 
         else 
            @teams = Team.all 
         end  
