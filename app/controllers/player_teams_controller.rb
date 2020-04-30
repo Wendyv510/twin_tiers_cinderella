@@ -47,7 +47,7 @@ class PlayerTeamsController < ApplicationController
     private 
 
     def player_team_params
-        params.require(:player_team).permit(:player, :position, :year, :team_id, :player_id)
+        params.require(:player_team).permit(:position, :year, :team_id, :player_id)
     end  
 
 end
