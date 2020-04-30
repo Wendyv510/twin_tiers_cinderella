@@ -1,4 +1,5 @@
 class TeamsController < ApplicationController
+    
 
     def index 
         if params[:location]    
