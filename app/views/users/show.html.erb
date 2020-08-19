@@ -6,7 +6,7 @@
 <img src= "https://clipartmag.com/images/softball-cartoon-images-clipart-23.jpg">
 <br>
 <a href="/teams", style="color:black">View All Teams</a><br><br>
-<!-- <%= button_to "View My Teams", "/users/#{current_user.id}/teams" %> <br> -->  
+<%= button_to "View My Teams", user_teams_path %> <br>  
 <%= button_to "Register New Team", new_team_path %> <br>
 <%= button_to "Register New Player", new_player_path %> <br>  
 
